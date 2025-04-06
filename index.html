@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Testvériség</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ismerd meg a csapatunkat!</h1>
+      <p>
+        A Testvériség a háttérből dolgozik a Mérnökinformatika világuralmának
+        biztosításán.
+      </p>
+    </header>
+    <section class="team">
+      <div class="member">
+        <div class="pic">
+          <img src="pics/joco.jpg" style="width: 100%" />
+        </div>
+        <h3>Koczó József</h3>
+        <p>Mérnökinformatikus BSc-MSc</p>
+      </div>
+      <div class="member">
+        <div class="pic">
+          <img src="pics/teo.jpg" style="width: 100%" />
+        </div>
+        <h3>Fodor Teodor</h3>
+        <p>Mérnökinformatikus BSc-MSc</p>
+      </div>
+      <div class="member">
+        <div class="pic">
+          <img src="pics/domi.jpg" style="width: 100%" />
+        </div>
+        <h3>Kolman Domonkos László</h3>
+        <p>Mérnökinformatikus BSc</p>
+      </div>
+      <div class="member">
+        <div class="pic">
+          <img src="pics/peti.jpg" style="width: 100%" />
+        </div>
+        <h3>Zöldi Péter</h3>
+        <p>Mérnökinformatikus BSc-MSc</p>
+      </div>
+      <div class="member">
+        <div class="pic">
+          <img src="pics/ervin.jpg" style="width: 100%" />
+        </div>
+        <h3>Kis Ervin</h3>
+        <p>Mérnökinformatikus BSc-Programtervező informatikus MSc</p>
+      </div>
+      <div class="member">
+        <div class="pic">
+          <img src="pics/bandi.jpg" style="width: 100%" />
+        </div>
+        <h3>Tönköly Andor</h3>
+        <p>Mérnökinformatikus BSc-MSc-PhD</p>
+      </div>
+    </section>
+    <hr />
+    <h2>Mémek</h2>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 12</div>
+        <img src="pics/mem2.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 12</div>
+        <img src="pics/mem3.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 12</div>
+        <img src="pics/mem4.png" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 12</div>
+        <img src="pics/mem5.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 12</div>
+        <img src="pics/mem6.png" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 12</div>
+        <img src="pics/mem7.png" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 12</div>
+        <img src="pics/mem8.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 12</div>
+        <img src="pics/mem9.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">9 / 12</div>
+        <img src="pics/mem10.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">10 / 12</div>
+        <img src="pics/mem11.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">11 / 12</div>
+        <img src="pics/mem12.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">12 / 12</div>
+        <img src="pics/mem13.jpg" style="width: 100%" />
+      </div>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span>
+      <span class="dot" onclick="currentSlide(12)"></span>
+    </div>
+
+    <script>
+      let slideIndex = 0;
+      showSlidesAuto();
+
+      function showSlidesAuto() {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        if (slides[slideIndex - 1]) {
+          slides[slideIndex - 1].style.display = "block";
+        }
+        if (dots[slideIndex - 1]) {
+          dots[slideIndex - 1].className += " active";
+        }
+        setTimeout(showSlidesAuto, 7000); // 7 másodpercenként vált
+      }
+
+      function plusSlides(n) {
+        slideIndex += n - 1;
+        showSlidesAuto();
+      }
+
+      function currentSlide(n) {
+        slideIndex = n - 1;
+        showSlidesAuto();
+      }
+    </script>
+  </body>
+</html>
